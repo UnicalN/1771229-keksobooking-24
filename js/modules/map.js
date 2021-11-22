@@ -120,7 +120,9 @@ const resetMap = () =>
   createMainMarker();
 };
 export {
+  map,
   updatePins,
-  resetMap
+  resetMap,
+  setDefaultAddress
 };
 
