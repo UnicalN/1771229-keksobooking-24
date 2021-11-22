@@ -1,11 +1,12 @@
+const CLOSE_POPUP_KEY = 27;
 const bodyElement = document.querySelector('body');
 const adFormElement=document.querySelector('.ad-form');
 const mapFiltersElement=document.querySelector('.map__filters');
 let submitMessageElement;
 
 
-const escOnSubmitMessageHandler = (evt) =>{
-  if (evt.key === 27) {
+const keyOnSubmitMessageHandler = (evt) =>{
+  if (evt.key === CLOSE_POPUP_KEY) {
     bodyElement.remove(submitMessageElement);
   }
 };
@@ -26,14 +27,14 @@ const  createSuccessPopup = () =>{
   adFormElement.reset();
   mapFiltersElement.reset();
 
-  window.addEventListener('keydown', (evt) => escOnSubmitMessageHandler(evt));
+  window.addEventListener('keydown', (evt) => keyOnSubmitMessageHandler(evt));
   submitMessageElement.addEventListener('click', clickOnSubmitMessageHandler());
 };
 
 const  createErrorPopup = () =>{
   submitMessageElement = (document.querySelector('#error')).content.cloneNode(true);
   bodyElement.appendChild(submitMessageElement);
-  window.addEventListener('keydown', (evt) => escOnSubmitMessageHandler(evt));
+  window.addEventListener('keydown', (evt) => keyOnSubmitMessageHandler(evt));
   submitMessageElement.addEventListener('click', clickOnSubmitMessageHandler());
   const closeButton = submitMessageElement.querySelector('.error__button');
   closeButton.addEventListener('click', buttonOnSubmitMessageHandler());

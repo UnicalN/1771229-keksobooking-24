@@ -35,14 +35,14 @@ const setAddressFromLatLng = (lat, lng) => {
   setAddress(`${roundTheNumber(lat, LOCATION_DIGITS_IN_ADDRESS)  }, ${  roundTheNumber(lng, LOCATION_DIGITS_IN_ADDRESS)}`);
 };
 
-const setCapacityForRooms = (theRoomAmount, theCapacity)=>{
+const setCapacityForRooms = (theRoomAmount, theCapacityElement)=>{
   if (theRoomAmount.value==='100'){
-    theCapacity.value = '0';
+    theCapacityElement.value = '0';
   }
   else {
-    theCapacity.value = '1';
+    theCapacityElement.value = '1';
   }
-  for (const option of theCapacity.children){
+  for (const option of theCapacityElement.children){
     option.disabled = true;
     for (const possibleCapacity of CapacityForRooms[theRoomAmount.value]){
       if ((option.value - possibleCapacity) === 0){
@@ -53,8 +53,8 @@ const setCapacityForRooms = (theRoomAmount, theCapacity)=>{
 };
 
 
-const setEqualTime = (userSetTime, syncTime) => {
-  for (const childElement of syncTime.children)
+const setEqualTime = (userSetTime, syncTimeElement) => {
+  for (const childElement of syncTimeElement.children)
   {
     childElement.selected = false;
     if (childElement.value === userSetTime.value)

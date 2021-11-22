@@ -3,8 +3,8 @@ import { createOfferLayout } from './generate-layout.js';
 import { isOfferSuitable } from './map-filters.js';
 import {enablePage} from './enable-disable-page.js';
 
-const DEFAULT_LAT = 35.68;
-const DEFAULT_LNG = 139.77;
+const DEFAULT_LAT = 35.68001;
+const DEFAULT_LNG = 139.77001;
 const DEFAULT_SCALE = 13;
 const MARKERS_AMOUNT = 10;
 const SELECTOR_SIZE = 52;

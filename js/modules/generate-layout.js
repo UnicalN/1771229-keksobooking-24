@@ -58,7 +58,7 @@ const createOfferLayout = (offerSummary) => {
   addPhotos(offerSummary.offer.photos);
   popup.avatar.src=offerSummary.author.avatar;
   removeEmptyElements(cardCloneElement);
-  return cardCloneElement.firstElementChild;
+  return cardCloneElement.firstChild;
 };
 
 
