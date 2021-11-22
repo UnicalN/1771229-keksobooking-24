@@ -21,7 +21,7 @@ const buttonOnSubmitMessageHandler = () =>{
 
 //popupcreators
 const  createSuccessPopup = () =>{
-  submitMessageElement = document.querySelector('#success').content.cloneNode(true);
+  submitMessageElement = (document.querySelector('#success')).content.cloneNode(true);
   bodyElement.appendChild(submitMessageElement);
   adFormElement.reset();
   mapFiltersElement.reset();
@@ -31,7 +31,7 @@ const  createSuccessPopup = () =>{
 };
 
 const  createErrorPopup = () =>{
-  submitMessageElement = document.querySelector('#error').content.cloneNode(true);
+  submitMessageElement = (document.querySelector('#error')).content.cloneNode(true);
   bodyElement.appendChild(submitMessageElement);
   window.addEventListener('keydown', (evt) => escOnSubmitMessageHandler(evt));
   submitMessageElement.addEventListener('click', clickOnSubmitMessageHandler());
